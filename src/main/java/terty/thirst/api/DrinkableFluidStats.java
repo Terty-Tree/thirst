@@ -1,7 +1,7 @@
 package terty.thirst.api;
 
 /** Defines the statistics related to thirst for a drinkable fluid. */
-public class DrinkableFluidStats {
+public class DrinkableFluidStats implements DrinkableFluidStatProvider {
 
 	/** Amount of thirst satisfaction provided per bucket of the fluid consumed.
 	 **
