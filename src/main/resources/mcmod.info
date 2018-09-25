@@ -1,0 +1,16 @@
+[
+{
+  "modid": "${modid}",
+  "name": "Thirst",
+  "description": "Adds a thirst system for players.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Terty"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
