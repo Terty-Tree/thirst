@@ -2,15 +2,20 @@ package terty.thirst;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemBucket;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidTank;
+import net.minecraftforge.fluids.FluidUtil;
 import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
+import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -60,6 +65,22 @@ public class Thirst {
 					return null;
 				}
 			});
+	}
+
+	@SubscribeEvent
+	public static void drinkEvent(PlayerInteractEvent.RightClickItem event) {
+		if (!event.isCanceled() && !event.getWorld().isRemote) {
+			EntityPlayer player = event.getEntityPlayer();
+			Item item = event.getItemStack().getItem();
+			if (item instanceof ItemBucket) {
+				if (player.hasCapability(CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY, null)) {
+					IFluidHandler fluidHandler = player.getCapability(CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY, null);
+					if (fluidHandler != null) {
+						FluidUtil.interactWithFluidHandler(player, event.getHand(), fluidHandler);
+					}
+				}
+			}
+		}
 	}
 
 }
