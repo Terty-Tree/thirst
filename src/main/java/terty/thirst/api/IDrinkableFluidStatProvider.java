@@ -1,6 +1,6 @@
 package terty.thirst.api;
 
-public interface DrinkableFluidStatProvider {
+public interface IDrinkableFluidStatProvider {
 
 	/** @return the amount of satisfaction provided per bucket of the liquid consumed. */
 	int getSatisfaction();
