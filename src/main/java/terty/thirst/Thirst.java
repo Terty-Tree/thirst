@@ -40,7 +40,7 @@ public class Thirst {
 
 	@SubscribeEvent
 	public static void attachThirstCapability(AttachCapabilitiesEvent<Entity> event) {
-		if (CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY != null && event.getObject() instanceof EntityPlayer)
+		if (CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY != null && event.getObject() instanceof EntityPlayer) {
 			event.addCapability(THIRST_RESOURCE_LOCATION, new ICapabilityProvider() {
 				private FluidTank thirstTank = new FluidTank(1000) {
 					private FluidStack allowedFluid = new FluidStack(FluidRegistry.WATER, 0);
@@ -65,6 +65,7 @@ public class Thirst {
 					return null;
 				}
 			});
+		}
 	}
 
 	@SubscribeEvent
