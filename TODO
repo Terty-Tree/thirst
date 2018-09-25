@@ -1,0 +1,2 @@
+- Capability information gets lost when player needs to be recreated (dying or leaving/rejoining).
+- Drink the water instead of just depositing it.
