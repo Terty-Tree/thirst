@@ -1,4 +1,4 @@
-package terty.thirst;
+package terty.thirst.mod;
 
 import net.minecraftforge.fluids.FluidStack;
 
@@ -6,9 +6,9 @@ public final class ThirstHandlerCapability {
 
 	/* Defaults */
 	/** Default value for {@link ThirstHandlerCapability#maxSatisfaction}. */
-	private static int defaultMaxSatisfaction = 0;
+	private static int defaultMaxSatisfaction = 20;
 	/** Default value for {@link ThirstHandlerCapability#maxSaturation}. */
-	private static float defaultMaxSaturation = 0;
+	private static float defaultMaxSaturation = 20;
 
 	/* Limits */
 	/** The highest value a player's thirst satisfaction can be.

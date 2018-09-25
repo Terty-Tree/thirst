@@ -1,4 +1,4 @@
-package terty.thirst;
+package terty.thirst.mod;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
